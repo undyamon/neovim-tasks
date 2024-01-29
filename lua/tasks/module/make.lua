@@ -15,6 +15,7 @@ return {
         return {
           cmd = module_config.cmd,
           args = module_config.args and module_config.args[target] or { target },
+          after_success = function() vim.cmd.cclose() end
         }
       end
     end,
